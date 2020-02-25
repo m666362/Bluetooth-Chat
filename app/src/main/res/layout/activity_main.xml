@@ -6,58 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView android:text="Bluetooth Example"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textview"
-        android:textSize="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
+
+
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentStart="true" android:layout_alignParentTop="true" android:text="Listen" android:layout_marginTop="19dp" android:layout_marginStart="14dp" android:id="@+id/listen"/>
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_below="@+id/textview"
-        android:layout_above="@+id/buttonLayout"/>
-
-    <LinearLayout
+        android:layout_height="200dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginVertical="31dp"
+        android:id="@+id/listview"
+        android:layout_below="@+id/listen"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="48dp"
+        android:id="@+id/msg"
+        android:layout_below="@+id/listview"
+        android:textStyle="italic"
+        android:textSize="30sp"
+        android:textColor="?android:attr/textColorLink"
+        android:textAlignment="center"
+        android:hint="Message"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/writemsg"
+        android:layout_alignStart="@+id/listen"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:id="@+id/buttonLayout">
+        android:inputType="textPersonName"
+        android:ems="10" android:layout_marginBottom="14dp"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/onButton"
-            android:text="On"
-            android:onClick="onButton"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Send"
+        android:id="@+id/send"
+        android:layout_alignEnd="@+id/status"
+        android:layout_alignTop="@+id/writemsg"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/getVisible"
-            android:text="getVisible"
-            android:onClick="getVisible"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="List Devices"
+        android:id="@+id/listDevices"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/listview"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/listDevices"
-            android:text="listDevices"
-            android:onClick="listDevices"/>
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Status"
+        android:id="@+id/status"
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:layout_marginEnd="14dp" android:layout_alignParentEnd="true" android:layout_alignBottom="@+id/listDevices" android:layout_alignBaseline="@+id/listDevices"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/turnOff"
-            android:text="turnOff"
-            android:onClick="turnOff"/>
-
-    </LinearLayout>
 
 
 </RelativeLayout>
